@@ -1,0 +1,58 @@
+{
+  "name": "dynatrace-mcp-server",
+  "version": "1.0.0",
+  "description": "A comprehensive Model Context Protocol (MCP) server for Dynatrace monitoring and management",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "dynatrace-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && node dist/index.js",
+    "start": "node dist/index.js",
+    "test": "echo \"No tests configured yet\"",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "dynatrace",
+    "mcp",
+    "model-context-protocol",
+    "monitoring",
+    "observability",
+    "apm",
+    "infrastructure",
+    "devops",
+    "sre"
+  ],
+  "author": {
+    "name": "Deepak Singh",
+    "url": "https://github.com/deepak-101-dev"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.19.1",
+    "dotenv": "^16.4.5",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.2",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.3"
+  }
+}
