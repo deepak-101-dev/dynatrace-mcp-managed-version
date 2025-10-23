@@ -45,20 +45,11 @@ async function main() {
 
   // Log startup information
   if (loggingConfig.enableDebug) {
-    console.error(`🚀 Using MCP Server config: ${serverConfig.name} v${serverConfig.version}`);
-    console.error(`🔐 Loaded Dynatrace URL: ${process.env.DYNATRACE_ENV_URL ? '✅' : '❌ missing'}`);
-    console.error("🚀 Dynatrace MCP Server started successfully!");
-    console.error(" Available modules:");
-    console.error("   • Problems Management (8 tools)");
-    console.error("   • Maintenance Windows (6 tools)");
-    console.error("   • Host Monitoring (7 tools)");
-    console.error("   • Dashboards (5 tools)");
-    console.error("   • Events Management (7 tools)");
-    console.error("   • Metrics (2 tools)");
-    console.error("   • Entity Management (3 tools)");
-    console.error("🔧 Total: 38+ Dynatrace MCP tools ready!");
-    console.error(`📝 Server: ${serverConfig.name} v${serverConfig.version}`);
-    console.error(` Log Level: ${loggingConfig.level}`);
+    console.error(`Using MCP Server config: ${serverConfig.name} v${serverConfig.version}`);
+    console.error(`Loaded Dynatrace URL: ${process.env.DYNATRACE_ENV_URL ? 'Loaded' : 'missing'}`);
+    console.error("Dynatrace MCP Server started successfully!");
+    console.error(`Server: ${serverConfig.name} v${serverConfig.version}`);
+    console.error(`Log Level: ${loggingConfig.level}`);
   }
 }
 

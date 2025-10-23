@@ -15,6 +15,5 @@ config({ path: envPath });
 
 // Optional: Log for debugging (can be removed in production)
 // if (process.env.ENABLE_DEBUG_LOGGING === 'true') {
-//   console.error(`🔧 Bootstrap: Loading .env from ${envPath}`);
-//   console.error(`🔧 Bootstrap: DYNATRACE_ENV_URL loaded: ${process.env.DYNATRACE_ENV_URL ? '✅' : '❌'}`);
+//   console.error(`Bootstrap: Loading .env from ${envPath}`);
 // }
