@@ -1,3 +1,4 @@
+import "./bootstrap-env.js";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
@@ -44,6 +45,8 @@ async function main() {
 
   // Log startup information
   if (loggingConfig.enableDebug) {
+    console.error(`🚀 Using MCP Server config: ${serverConfig.name} v${serverConfig.version}`);
+    console.error(`🔐 Loaded Dynatrace URL: ${process.env.DYNATRACE_ENV_URL ? '✅' : '❌ missing'}`);
     console.error("🚀 Dynatrace MCP Server started successfully!");
     console.error(" Available modules:");
     console.error("   • Problems Management (8 tools)");

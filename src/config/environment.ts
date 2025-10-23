@@ -1,15 +1,16 @@
+
+
 import { z } from 'zod';
-import { config } from 'dotenv';
 
-// Load environment variables from .env file
-config();
-
-// Environment validation schema with defaults
+// Environment validation schema
+// Note: dotenv.config() is now handled by bootstrap-env.ts
 const envSchema = z.object({
   DYNATRACE_API_TOKEN: z.string().min(1, 'DYNATRACE_API_TOKEN is required'),
   DYNATRACE_ENV_URL: z.string().url('DYNATRACE_ENV_URL must be a valid URL'),
+  USE_PROXY: z.string().transform(val => val === 'true').default('false'),
+  PROXY_URL: z.string().optional().default(''),
   LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']).default('info'),
-  ENABLE_DEBUG_LOGGING: z.string().transform(val => val === 'true').default('true'),
+  ENABLE_DEBUG_LOGGING: z.string().transform(val => val === 'true').default('false'),
   MCP_SERVER_NAME: z.string().default('dynatrace-mcp'),
   MCP_SERVER_VERSION: z.string().default('1.0.0'),
 });
@@ -19,7 +20,7 @@ const parseEnv = () => {
   try {
     return envSchema.parse(process.env);
   } catch (error) {
-    console.error(' Environment validation failed:');
+    console.error('Environment validation failed:');
     if (error instanceof z.ZodError) {
       error.errors.forEach(err => {
         console.error(`   ${err.path.join('.')}: ${err.message}`);
@@ -37,6 +38,10 @@ export const dynatraceConfig = {
   envUrl: env.DYNATRACE_ENV_URL,
 } as const;
 
+export const proxyConfig = {
+  enabled: env.USE_PROXY,
+  url: env.PROXY_URL || null,
+} as const;
 
 export const loggingConfig = {
   level: env.LOG_LEVEL,
