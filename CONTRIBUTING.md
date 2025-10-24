@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to the Dynatrace MCP Server! This document provides guidelines and information for contributors.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -16,8 +16,8 @@ Thank you for your interest in contributing to the Dynatrace MCP Server! This do
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repository-url>
-   cd dynatrace-mcp-server
+   git clone https://github.com/deepak-101-dev/dynatrace-mcp-managed-version.git
+   cd ManagedDynatraceMCP
    ```
 
 2. **Install dependencies**
@@ -69,18 +69,18 @@ Thank you for your interest in contributing to the Dynatrace MCP Server! This do
 
    Or use the MCP server directly in Cursor for development and testing.
 
-## 📝 How to Contribute
+## How to Contribute
 
 ### Types of Contributions
 
 We welcome several types of contributions:
 
-- **🐛 Bug fixes** - Fix issues and improve stability
-- **✨ New features** - Add new tools or functionality
-- **📚 Documentation** - Improve docs, examples, and guides
-- **🧪 Tests** - Add or improve test coverage
-- **🔧 Refactoring** - Improve code quality and structure
-- **🌐 Translations** - Add support for new languages
+- **Bug fixes** - Fix issues and improve stability
+- **New features** - Add new tools or functionality
+- **Documentation** - Improve docs, examples, and guides
+- **Tests** - Add or improve test coverage
+- **Refactoring** - Improve code quality and structure
+- **Translations** - Add support for new languages
 
 ### Contribution Process
 
@@ -112,7 +112,7 @@ refactor/simplify-api-utilities
 refactor/improve-type-definitions
 ```
 
-## 🎯 Coding Standards
+## Coding Standards
 
 ### TypeScript Guidelines
 
@@ -166,7 +166,7 @@ import { makeDynatraceRequest } from "../utils/api.js";
 import { DYNATRACE_ENV_URL } from "../config/constants.js";
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Running Tests
 
@@ -204,7 +204,7 @@ describe("getProblems", () => {
 });
 ```
 
-## 📋 Pull Request Guidelines
+## Request Guidelines
 
 ### Before Submitting
 
@@ -250,7 +250,7 @@ Brief description of changes
 4. **Approval** - At least one maintainer approval required
 5. **Merge** - Changes are merged into main branch
 
-## 🐛 Reporting Issues
+##Reporting Issues
 
 ### Bug Reports
 
@@ -271,7 +271,7 @@ For feature requests, please include:
 - **Alternatives** - Other solutions you've considered
 - **Additional context** - Any other relevant information
 
-## 📚 Documentation
+##Documentation
 
 ### Documentation Standards
 
@@ -332,4 +332,4 @@ Contributors will be recognized in:
 - **CHANGELOG.md** - Release notes
 - **GitHub** - Contributor statistics
 
-Thank you for contributing to the Dynatrace MCP Server! 🎉
+Thank you for contributing to the Dynatrace MCP Server!
