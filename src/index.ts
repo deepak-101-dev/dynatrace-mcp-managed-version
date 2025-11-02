@@ -13,6 +13,8 @@ import { registerDashboardTools } from "./tools/dashboards.js";
 import { registerEventTools } from "./tools/events.js";
 import { registerMetricsTools } from "./tools/metrics.js";
 import { registerEntityTools } from "./tools/entities.js";
+import { registerPrompts } from "./tools/prompts.js";
+import { registerProblemResources } from "./resources/problems.js";
 
 async function main() {
   // Create MCP server with environment configuration
@@ -24,6 +26,12 @@ async function main() {
     {
       capabilities: {
         tools: {
+          listChanged: true,
+        },
+        prompts: {
+          listChanged: true,
+        },
+        resources: {
           listChanged: true,
         },
       },
@@ -38,6 +46,12 @@ async function main() {
   registerEventTools(server);
   registerMetricsTools(server);
   registerEntityTools(server);
+  
+  // Register prompts
+  registerPrompts(server);
+  
+  // Register resources
+  registerProblemResources(server);
 
   // Set up stdio transport
   const transport = new StdioServerTransport();
